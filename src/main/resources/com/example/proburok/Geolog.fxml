@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #eef2f3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proburok.job.GeologCOD">
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: #eef2f3;" BorderPane.alignment="CENTER">
+         <content>
+            <StackPane style="-fx-background-color: #eef2f3;">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxWidth="1200.0" prefHeight="1070.0" prefWidth="1085.0" spacing="25.0" style="-fx-background-color: #eef2f3;">
+                     <children>
+                         <GridPane hgap="20">
+                             <columnConstraints>
+                                 <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="20" />
+                                 <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="75" />
+                             </columnConstraints>
+                             <rowConstraints>
+                                 <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                             </rowConstraints>
+                             <children>
+                                 <!-- Строка 0: заголовки -->
+                                 <Label text="ГОРИЗОНТ" />
+                                 <Label text="НАЗВАНИЕ ГОРНОЙ ВЫРАБОТКИ" GridPane.columnIndex="1" />
+            
+                                             <!-- Строка 1: поля выбора -->
+                                 <ComboBox fx:id="gorbox" editable="true" prefHeight="30.0" GridPane.rowIndex="1">
+                                     <GridPane.margin>
+                                    <Insets right="45.0" />
+                                 </GridPane.margin>
+                                 </ComboBox>
+                                 <ComboBox fx:id="namebox" editable="true" maxWidth="Infinity" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            
+                                             <!-- Строка 2: заголовки длины и привязки -->
+                                 <Label text="ДЛИНА ВЫРАБОТКИ, М" GridPane.rowIndex="2" />
+                                 <Label text="ПРИВЯЗКА" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            
+                                             <!-- Строка 3: поля ввода -->
+                                 <TextField fx:id="dlina" editable="false" prefHeight="30.0" GridPane.rowIndex="3" />
+                                 <TextField fx:id="privazka" editable="false" prefHeight="43.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                             </children>
+                             <VBox.margin>
+                                 <Insets left="35.0" right="35.0" />
+                             </VBox.margin>
+                         </GridPane>
+                        <VBox alignment="TOP_CENTER" prefHeight="164.0" prefWidth="1160.0">
+                           <children>
+                              <Label prefHeight="43.0" prefWidth="232.0" text="ГРАФИЧЕСКИЕ МАТЕРИАЛЫ">
+                                 <font>
+                                    <Font name="Verdana" size="14.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="118.0" prefWidth="830.0">
+                                 <children>
+                                    <AnchorPane prefHeight="74.0" prefWidth="752.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px; -fx-border-color: #a2a2a2; -fx-border-radius: 5px;">
+                                       <children>
+                                          <Label layoutX="45.0" layoutY="40.0" prefHeight="43.0" prefWidth="130.0" text="План выработки">
+                                             <font>
+                                                <Font name="Verdana" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fx:id="planVNS" fitHeight="45.0" fitWidth="45.0" layoutX="230.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@assets/dobavlenieA.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="PlanVKL" fitHeight="45.0" fitWidth="45.0" layoutX="289.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@assets/silkaA.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="planVNSNE" fitHeight="45.0" fitWidth="45.0" layoutX="230.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@assets/dobavlenieN.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="PlanVKLNe" fitHeight="45.0" fitWidth="45.0" layoutX="289.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@assets/silkaN.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="planobnov" fitHeight="45.0" fitWidth="45.0" layoutX="230.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@assets/izmen.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="445.0" layoutY="40.0" prefHeight="43.0" prefWidth="78.0" text="Разрез ">
+                                             <font>
+                                                <Font name="Verdana" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fx:id="poperVNS" fitHeight="45.0" fitWidth="45.0" layoutX="578.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@assets/dobavlenieA.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="poperobnov" fitHeight="45.0" fitWidth="45.0" layoutX="578.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@assets/izmen.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="PoperVKL" fitHeight="45.0" fitWidth="45.0" layoutX="636.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@assets/silkaA.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="poperVNSNE" fitHeight="45.0" fitWidth="45.0" layoutX="578.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@assets/dobavlenieN.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="PoperVKLNe" fitHeight="45.0" fitWidth="45.0" layoutX="636.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@assets/silkaN.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="497.0" prefWidth="1148.0">
+                           <children>
+                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="484.0" prefWidth="1113.0">
+                                 <children>
+                              
+                                                <ImageView fx:id="nom" fitHeight="499.0" fitWidth="1023.0" layoutX="46.0" layoutY="-2.0" mouseTransparent="true" pickOnBounds="true">
+                              
+                                                   <image>
+                                          <Image url="@assets/nom.jpg" />
+                                       </image>
+                                    </ImageView>
+                              
+                                                <Button fx:id="B1" layoutX="56.0" layoutY="94.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="116.0" style="-fx-background-color: #00000000; -fx-border-color: #000000; -fx-border-width: 0px;" />
+                                    <Button fx:id="B2" layoutX="398.0" layoutY="94.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="115.0" style="-fx-background-color: #00000000; -fx-border-color: #000000; -fx-border-width: 0px;" />
+                                    <Button fx:id="B3" layoutX="716.0" layoutY="94.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="117.0" style="-fx-background-color: #00000000; -fx-border-color: #000000; -fx-border-width: 0px;" />
+                                    <Button fx:id="B4" layoutX="56.0" layoutY="339.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="116.0" style="-fx-background-color: #00000000; -fx-border-color: #000000; -fx-border-width: 0px;" />
+                                    <Button fx:id="B5" layoutX="398.0" layoutY="339.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="115.0" style="-fx-background-color: #00000000; -fx-border-color: #000000; -fx-border-width: 0px;" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets right="30.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="305.0" />
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="Lb_Klass" prefHeight="43.0" prefWidth="228.0" text="ГЕОЛ. КЛАСС УСТОЙЧИВОСТИ">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="Lb_Opis" prefHeight="43.0" prefWidth="228.0" text="ГЕОЛОГИЧЕСКОЕ ОПИСАНИЕ" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                              </Label>
+                                <TextField fx:id="katigoria" editable="false" maxWidth="200.0" prefHeight="30.0" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                  
+                                          <TextArea fx:id="opisanie" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets right="50.0" />
+                                 </GridPane.margin>
+                              </TextArea>
+                              <Label fx:id="L_OT" prefHeight="43.0" prefWidth="58.0" text="НАЧАЛО" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="L_DO" prefHeight="43.0" prefWidth="58.0" text="КОНЕЦ" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="110.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="DO" maxWidth="70.0" prefHeight="43.0" promptText="ДО" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="110.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="OT" maxWidth="70.0" prefHeight="43.0" promptText="ОТ" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="35.0" right="35.0" />
+                           </VBox.margin>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" top="30.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </StackPane>
+         </content>
+      </ScrollPane>
+   </center>
+   <left>
+      <VBox prefWidth="203.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+              <ImageView fitHeight="101.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@assets/IMG_4772.JPG" />
+                  </image>
+              </ImageView>
+
+                        <TextField fx:id="idi" prefHeight="43.0" prefWidth="139.0" promptText="idi">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <AnchorPane fx:id="AP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="73.0" prefWidth="199.0" style="-fx-background-color: #FFFFFF;">
+            
+                <children>
+            
+                                <TableView fx:id="dataTable" editable="true" managed="false" prefHeight="58.0" prefWidth="667.0" visible="false">
+                        <columns>
+                            <TableColumn fx:id="column1" prefWidth="93.0" text="№ Интервала" />
+                            <TableColumn fx:id="column2" prefWidth="100.0" text="НАЧАЛО" />
+                            <TableColumn fx:id="column3" prefWidth="100.0" text="КОНЕЦ" />
+                            <TableColumn fx:id="column4" prefWidth="150.0" text="ГЕОЛГ. КЛАСС" />
+                            <TableColumn fx:id="column5" prefWidth="222.0" text="ОПИСАНИЕ" />
+                            <TableColumn fx:id="column6" prefWidth="156.0" text="OTDO" visible="true" />
+                            <TableColumn fx:id="column7" prefWidth="156.0" text="LIST" visible="true" />
+                            <TableColumn fx:id="column8" prefWidth="156.0" text="NOMER" visible="true" />
+                        </columns>
+                    </TableView>
+                  <TextField fx:id="OSTATOK" layoutX="974.0" layoutY="979.0" prefHeight="43.0" prefWidth="91.0" promptText="SUM" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                    <TextField fx:id="nomer" disable="true" layoutX="23.0" layoutY="78.0" prefHeight="43.0" prefWidth="139.0" promptText="№ ПАСПОРТА" visible="false">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </TextField>
+                </children>
+            </AnchorPane>
+            <Region prefHeight="90.0" prefWidth="203.0" />
+            <ImageView fitHeight="73.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ProhodN.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="73.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/GeologA.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="73.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/GeomexN.jpg" />
+               </image>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox alignment="CENTER" spacing="43.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="instr" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/instr.jpg" />
+               </image>
+            </ImageView>
+            <Region minWidth="250.0" prefHeight="58.0" HBox.hgrow="ALWAYS" />
+             <ImageView fx:id="dokumGeolog" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@assets/iconGeolog.jpg" />
+                 </image>
+             </ImageView>
+             <ImageView fx:id="dokumGeolog11" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@assets/albom.jpg" />
+                 </image>
+             </ImageView>
+            <ImageView fx:id="tabl" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/BDA.jpg" />
+               </image>
+            </ImageView>
+            <Region HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="cb" mnemonicParsing="false" text="Создать дополнение">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </CheckBox>
+      
+                                    
+      
+                                    
+              <Button fx:id="singUpButtun" mnemonicParsing="false" prefHeight="45.0" prefWidth="161.0" style="-fx-background-color: #aa9455; -fx-background-radius: 20px;" text="Сохранить данные" textFill="WHITE">
+                  <font>
+                      <Font name="Verdana" size="14.0" />
+                  </font>
+              </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="80.0" right="35.0" top="10.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>

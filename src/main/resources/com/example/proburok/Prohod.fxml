@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #eef2f3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proburok.job.ProhodCOD">
+
+
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="203.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="30.0" />
+            </padding>
+            <children>
+                <ImageView fitHeight="101.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@assets/IMG_4772.JPG" />
+                    </image>
+                </ImageView>
+                <TextField fx:id="idi" maxWidth="Infinity" prefHeight="43.0" promptText="id">
+                    <font><Font size="14.0" /></font>
+                </TextField>
+            <Region prefHeight="90.0" prefWidth="203.0" />
+                <ImageView fitHeight="73.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@assets/ProhodA.jpg" /></image>
+                </ImageView>
+                <ImageView fitHeight="73.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@assets/GeologN.jpg" /></image>
+                </ImageView>
+                <ImageView fitHeight="73.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@assets/GeomexN.jpg" /></image>
+                </ImageView>
+            </children>
+        </VBox>
+    </left>
+         <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: #eef2f3;" BorderPane.alignment="CENTER">
+         <content>
+            <StackPane alignment="TOP_CENTER" style="-fx-background-color: #eef2f3;">
+               <children>
+                        <VBox alignment="TOP_CENTER" maxHeight="Infinity" maxWidth="Infinity" prefWidth="856.0" spacing="20.0" style="-fx-background-color: #eef2f3;">
+                           <children>
+                              <GridPane alignment="TOP_CENTER" hgap="20.0" maxWidth="Infinity">
+                                <columnConstraints>
+                                    <ColumnConstraints fillWidth="true" hgrow="ALWAYS" minWidth="10.0" />
+                                    <ColumnConstraints fillWidth="true" hgrow="ALWAYS" minWidth="10.0" />
+                                    <ColumnConstraints fillWidth="true" hgrow="ALWAYS" minWidth="10.0" />
+                                    <ColumnConstraints fillWidth="true" hgrow="ALWAYS" minWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="36.0" text="ДАТА" />
+                                    <Label prefHeight="43.0" prefWidth="100.0" text="№ УЧАСТКА" GridPane.columnIndex="1" />
+                                    <Label prefHeight="43.0" prefWidth="100.0" text="№ ПАСПОРТА" GridPane.columnIndex="2" />
+                                    <Label fx:id="L_sehen" prefHeight="43.0" prefWidth="100.0" text="СЕЧЕНИЕ,  М²" GridPane.columnIndex="3" />
+                                      <DatePicker fx:id="calendar" editable="false" prefHeight="30.0" GridPane.rowIndex="1" />
+                                      <ComboBox fx:id="ushatok" editable="true" prefHeight="43.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                      <TextField fx:id="nomer" editable="false" prefHeight="30.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                          <font>
+                                              <Font size="14.0" />
+                                          </font>
+                                      </TextField>
+                                      <TextField fx:id="sehen" editable="false" prefHeight="43.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                          <font>
+                                              <Font size="14.0" />
+                                          </font>
+                                      </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="31.0" right="30.0" top="32.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                              <GridPane hgap="27.0" maxWidth="Infinity">
+                                <columnConstraints>
+                                    <ColumnConstraints fillWidth="true" hgrow="ALWAYS" maxWidth="178.0" minWidth="10.0" />
+                                    <ColumnConstraints fillWidth="true" hgrow="ALWAYS" minWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="100.0" text="ГОРИЗОНТ" />
+                                    <Label prefHeight="30.0" prefWidth="219.0" text="НАЗВАНИЕ ГОРНОЙ ВЫРАБОТКИ" GridPane.columnIndex="1" />
+                                      <TextField fx:id="nameProhod" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                          <font>
+                                              <Font size="14.0" />
+                                          </font>
+                                      </TextField>
+                                    <Label fx:id="L_dlina" prefHeight="43.0" text="ДЛИНА ВЫРАБОТКИ, М" GridPane.rowIndex="2" />
+                                    <TextField fx:id="dlina" prefHeight="30.0" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label fx:id="privaz_L" prefHeight="43.0" text="ПРИВЯЗКА" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="privazka" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                      <TextField fx:id="gorizont" prefHeight="30.0" GridPane.rowIndex="1">
+                                          <font>
+                                              <Font size="14.0" />
+                                          </font>
+                                      </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="31.0" right="30.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                                <TabPane fx:id="meny" maxHeight="200.0" maxWidth="Infinity" rotateGraphic="true" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                    <tabs>
+                                        <Tab fx:id="pervi" text="Выработки ГКР">
+                                            <content>
+            
+                              
+                              
+                                                                          <TableView fx:id="Tablshen" maxHeight="Infinity" maxWidth="Infinity">
+                                                            <columns>
+                                                                <TableColumn fx:id="stolb1" prefWidth="591.0" text="Назначение выработки" />
+                                                                <TableColumn fx:id="stolb2" minWidth="0.0" prefWidth="174.0" text="Площадь сечения, м²" />
+                                                                <TableColumn fx:id="stolb3" visible="false" />
+                                                            </columns>
+                                                        </TableView>
+            
+                              
+                                                              </content>
+                                        </Tab>
+                                        <Tab fx:id="GPR" text="Выработки ГКР (ГПР)">
+                                            <content>
+            
+                              
+                                                                          <TableView fx:id="TablshenGPR" maxHeight="Infinity" maxWidth="Infinity">
+                                                            <columns>
+                                                                <TableColumn fx:id="stolbGPR1" prefWidth="591.0" text="Назначение выработки" />
+                                                                <TableColumn fx:id="stolbGPR2" minWidth="0.0" prefWidth="174.0" text="Площадь сечения, м²" />
+                                                                <TableColumn fx:id="stolbGPR3" visible="false" />
+                                                            </columns>
+                                                        </TableView>
+            
+                                                              </content>
+                                        </Tab>
+                                        <Tab fx:id="GNR" text="Выработки ГНР">
+                                            <content>
+            
+                              
+                                                                          <TableView fx:id="TablshenGNR" maxHeight="Infinity" maxWidth="Infinity">
+                                                            <columns>
+                                                                <TableColumn fx:id="stolbGNR1" prefWidth="591.0" text="Назначение выработки" />
+                                                                <TableColumn fx:id="stolbGNR2" minWidth="0.0" prefWidth="174.0" text="Площадь сечения, м²" />
+                                                                <TableColumn fx:id="stolbGNR3" visible="false" />
+                                                            </columns>
+                                                        </TableView>
+            
+                                                              </content>
+                                        </Tab>
+                                    <Tab fx:id="pervi1" text="Восстающие">
+                                       <content>
+            
+                                                                  <TableView fx:id="TablshenV" maxHeight="Infinity" maxWidth="Infinity">
+                                                   <columns>
+                                                      <TableColumn fx:id="stolb1V" prefWidth="591.0" text="Назначение выработки" />
+                                                      <TableColumn fx:id="stolb2V" minWidth="0.0" prefWidth="174.0" text="Площадь сечения, м²" />
+                                                      <TableColumn fx:id="stolb3V" visible="false" />
+                                                   </columns>
+                                                </TableView>
+            
+                                                         </content>
+            
+                              
+                                                      </Tab>
+                                        <Tab fx:id="vtoroi" text="Сопряжения">
+                                            <content>
+                                                        <TableView fx:id="Tablshen1" maxHeight="Infinity" maxWidth="Infinity">
+                                                            <columns>
+                                                                <TableColumn fx:id="stolb11" prefWidth="587.0" text="Назначение выработки" />
+                                                                <TableColumn fx:id="stolb21" minWidth="0.0" prefWidth="174.0" text="Площадь сечения, м²" />
+                                                                <TableColumn fx:id="stolb31" visible="false" />
+                                                            </columns>
+                                                        </TableView>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                 <padding>
+                                    <Insets left="29.0" right="17.0" />
+                                 </padding>
+                           <VBox.margin>
+                              <Insets right="11.0" />
+                           </VBox.margin>
+                                </TabPane>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="50.0">
+                           <children>
+                              <Label fx:id="Choice_Label" text="TEXT">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="ChoiceBox" editable="true" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="30.0" right="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox alignment="CENTER" prefHeight="159.0" prefWidth="856.0">
+                           <children>
+                                    <Label prefHeight="43.0" prefWidth="232.0" text="ГРАФИЧЕСКИЕ МАТЕРИАЛЫ">
+                                       <font>
+                                          <Font name="Verdana" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" prefHeight="118.0" prefWidth="830.0">
+                                       <children>
+                                          <AnchorPane prefHeight="74.0" prefWidth="752.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px; -fx-border-color: #a2a2a2; -fx-border-radius: 5px;">
+                                             <children>
+                                                <Label layoutX="45.0" layoutY="40.0" prefHeight="43.0" prefWidth="130.0" text="План выработки">
+                                                   <font>
+                                                      <Font name="Verdana" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fx:id="planVNS" fitHeight="45.0" fitWidth="45.0" layoutX="230.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                      <Image url="@assets/dobavlenieA.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="PlanVKL" fitHeight="45.0" fitWidth="45.0" layoutX="289.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                      <Image url="@assets/silkaA.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="planVNSNE" fitHeight="45.0" fitWidth="45.0" layoutX="230.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/dobavlenieN.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="PlanVKLNe" fitHeight="45.0" fitWidth="45.0" layoutX="289.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/silkaN.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="planobnov" fitHeight="45.0" fitWidth="45.0" layoutX="230.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                      <Image url="@assets/izmen.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="445.0" layoutY="40.0" prefHeight="43.0" prefWidth="78.0" text="Разрез ">
+                                                   <font>
+                                                      <Font name="Verdana" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fx:id="poperVNS" fitHeight="45.0" fitWidth="45.0" layoutX="578.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                      <Image url="@assets/dobavlenieA.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="poperobnov" fitHeight="45.0" fitWidth="45.0" layoutX="578.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                      <Image url="@assets/izmen.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="PoperVKL" fitHeight="45.0" fitWidth="45.0" layoutX="636.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image>
+                                                      <Image url="@assets/silkaA.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="poperVNSNE" fitHeight="45.0" fitWidth="45.0" layoutX="578.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/dobavlenieN.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="PoperVKLNe" fitHeight="45.0" fitWidth="45.0" layoutX="636.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/silkaN.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </HBox>
+                           </children>
+                        </VBox>
+                           </children>
+                     <StackPane.margin>
+                        <Insets bottom="30.0" />
+                     </StackPane.margin>
+                        </VBox>
+               </children>
+            </StackPane>
+         </content>
+      </ScrollPane>
+         </center>
+   <bottom>
+            <HBox alignment="CENTER" maxWidth="Infinity" prefHeight="84.0" prefWidth="1061.0" spacing="50.0" style="-fx-background-color: ffffff;" BorderPane.alignment="CENTER">
+               <children>
+                <ImageView fx:id="instr" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@assets/instr.jpg" /></image>
+                </ImageView>
+            <Region HBox.hgrow="ALWAYS" />
+                    <ImageView fx:id="pethat" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@assets/pehat.jpg" />
+                        </image>
+                    </ImageView>
+                    <ImageView fx:id="dokumGeolog" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@assets/iconGeolog.jpg" />
+                        </image>
+                    </ImageView>
+                    <ImageView fx:id="dokumGeolog11" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@assets/albom.jpg" />
+                        </image>
+                    </ImageView>
+                    <ImageView fx:id="othet" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@assets/othet.jpg" />
+                        </image>
+                    </ImageView>
+                    <ImageView fx:id="tabl" fitHeight="61.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@assets/BDA.jpg" />
+                        </image>
+                    </ImageView>
+                   <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="singUpButtun" mnemonicParsing="false" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: #aa9455; -fx-background-radius: 20px;" text="Сохранить данные" textFill="WHITE">
+                        <font>
+                            <Font name="Verdana" size="14.0" />
+                        </font>
+                    </Button>
+               </children>
+         <padding>
+            <Insets bottom="10.0" left="40.0" right="30.0" top="10.0" />
+         </padding>
+            </HBox>
+   </bottom>
+      </BorderPane>
