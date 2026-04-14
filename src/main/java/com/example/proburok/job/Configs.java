@@ -157,6 +157,18 @@ public class Configs {
             return null;
         }));
     }
+    protected void Filter_TextGor(TextField XX){
+        XX.setTextFormatter(new TextFormatter<>(change -> {
+            int start = Math.min(change.getRangeStart(), change.getRangeEnd());
+            int end = Math.max(change.getRangeStart(), change.getRangeEnd());
+            change.setRange(start, end);
+            String newText = change.getControlNewText();
+            if (newText.isEmpty() || newText.matches("-?[0-9]*([.,][0-9]*)?")) {
+                return change;
+            }
+            return null;
+        }));
+    }
     public void openNewScene(String Window,String BIG){
         // Загрузка нового окна
         FXMLLoader loader = new FXMLLoader();

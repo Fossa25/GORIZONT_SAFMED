@@ -7,6 +7,7 @@ module com.example.proburok {
     requires java.desktop;
     requires org.apache.logging.log4j;
     requires java.sql;
+    requires javafx.graphics;
 
 
     opens com.example.proburok to javafx.fxml;

@@ -96,7 +96,8 @@ public class ProhodCOD extends Configs {
         L_sehen.setVisible(false);
         idi.setVisible(false);
         tabltrabl();
-        Filter_Text(gorizont);Filter_Text(dlina);
+        Filter_TextGor(gorizont);
+        Filter_Text(dlina);
 
         pethat.setOnMouseClicked(mouseEvent -> openNewScene("/com/example/proburok/Pehat.fxml","no"));
         openImagedok(tabl,instr,dokumGeolog,dokumGeolog11,"yes");
@@ -134,7 +135,8 @@ public class ProhodCOD extends Configs {
                         case"21" -> tippas = "65";
                         default -> throw new IllegalStateException("Unexpected value: " + HIFR);
                     }
-                    Tabl.DobavlenieGEOLOG_SOPR("-","-",  input.selectedGor, nameBD,tippas,prim) ;
+                    Tabl.DobavlenieGEOLOG_SOPR("-","Выработка проходится в искусственном закладочном массиве с прочностью более 0,5 МПа. " +
+                            "Контакт с горным массивом отсутствует",  input.selectedGor, nameBD,tippas,prim) ;
                 }
                 ohistka();
             } catch (DateTimeException e) {
@@ -168,8 +170,13 @@ public class ProhodCOD extends Configs {
         LocalDate selectedDate = calendar.getValue();
         if (selectedDate == null) {errors.append("- Не выбрана дата\n");
         } else {DATA = Date.valueOf(selectedDate); }
-        if (  ChoiceBox.getValue().isEmpty()) errors.append("Пустое поле- "+Choice_Label.getText()+ "\n");
+        if ( ChoiceBox.getValue().isEmpty()) errors.append("Пустое поле- "+Choice_Label.getText()+ "\n");
+            if(idi.getText().equals("19")||idi.getText().equals("21")){
 
+                if (poperVNS.isVisible() || planVNSNE.isVisible()) {
+                    errors.append("- Не внесён графический материал ").append("\n");
+                }
+            }
 
         if (errors.length() > 0) {
             throw new ValidationException(" \n" + errors.toString());
@@ -230,9 +237,9 @@ public class ProhodCOD extends Configs {
                 new Probnik("Буровая выработка (вприсечку с массивом)", 20.21,20),
                 new Probnik("Буровая выработка (в закладке)", 20.21,21),
                 new Probnik("Буровая выработка (вприсечку с закладкой)",20.93 ,22),
-                new Probnik("Буровая выработка (в закладке)",20.93 ,23),
+                new Probnik("Буровая выработка (в закладке, вприсечку с массивом)",20.93 ,23),
                 new Probnik("Буровая выработка (вприсечку с закладкой)",25.75 ,24),
-                new Probnik("Буровая выработка (в закладке)", 25.75,25)
+                new Probnik("Буровая выработка (в закладке, вприсечку с массивом)", 25.75,25)
         );
         ObservableList<Probnik> tablV = FXCollections.observableArrayList(
                 new Probnik("ВХВ", 6.25,26),

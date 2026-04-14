@@ -1,9 +1,6 @@
 package com.example.proburok.job;
-import com.example.proburok.New_Class.Baza;
-import com.example.proburok.New_Class.Baza_Geolg;
+import com.example.proburok.New_Class.*;
 import com.example.proburok.MQ.DatabaseHandler;
-import com.example.proburok.New_Class.InputData;
-import com.example.proburok.New_Class.ValidationException;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -131,6 +128,8 @@ public class GeologCOD extends Configs {
         });
 
         singUpButtun.setOnMouseClicked(mouseEvent -> {
+
+
             String selectedGor = gorbox.getValue();
             String selectedName = namebox.getValue();
             if (cb.selectedProperty().get()) {
@@ -147,9 +146,14 @@ public class GeologCOD extends Configs {
                     //   errors.append("Проходка не предусмотрена назначением выработки").append("\n");
                 }
 
+                String fio = showFioDialog();
+                if (fio == null || fio.isEmpty()) {
+                    // Пользователь отменил ввод или оставил поле пустым
+                    return;
+                }
                 addRowToTable();
                 getPas_Table();
-
+                new DatabaseHandler().DobavlenieFIO(fio,selectedGor, selectedName);
                     if (!cb.selectedProperty().get()) {
                         new DatabaseHandler().DobavlenieGEOLOG_SOPR(katigoria.getText(),opisanie.getText(), selectedGor, selectedName,tippas,prim) ;
                         }else {
@@ -652,7 +656,11 @@ public class GeologCOD extends Configs {
             }
         }
     }
-
+    private String showFioDialog() {
+        FioInputDialog dialog = new FioInputDialog(singUpButtun.getScene().getWindow());
+        java.util.Optional<String> result = dialog.showAndWait();
+        return result.orElse(null);
+    }
 
    }
 

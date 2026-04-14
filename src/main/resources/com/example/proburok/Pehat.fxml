@@ -335,6 +335,11 @@
                       <Font size="14.0" />
                   </font>
               </TextField>
+            <TextField fx:id="famGeo" prefHeight="43.0" prefWidth="139.0" promptText="FIO">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
             <TextField fx:id="dop" editable="false" prefHeight="43.0" prefWidth="97.0" promptText="Дополнение" visible="false">
                <font>
                   <Font name="Verdana" size="14.0" />

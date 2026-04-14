@@ -85,6 +85,23 @@ public class DatabaseHandler extends Configs {
             throw new RuntimeException("Ошибка обновления данных: " + e.getMessage(), e);
         }
     }
+    public void DobavlenieFIO(String fam,String gorizont, String nazvanie) {
+        String query = "UPDATE " + Const.BAZA_TABLE + " SET " + Const.BAZA_FIO + " = ? "
+                + "WHERE " + Const.BAZA_GORIZONT + " = ? AND " + Const.BAZA_NAZVANIE + " = ?";
+
+        try (Connection connection = getDbConnection();
+             PreparedStatement prSt = connection.prepareStatement(query)) {
+
+            prSt.setString(1, fam);
+            prSt.setString(2, gorizont);
+            prSt.setString(3, nazvanie);
+
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Ошибка обновления данных: " + e.getMessage(), e);
+        }
+    }
     public void saveAllRows(List<Baza_Geolg> rows, String nomPas) {
         String insert = "INSERT INTO " + Const.GEO_TABLE + "(" + Const.GEO_NOMER +
                 "," + Const.GEO_OT + "," + Const.GEO_GO

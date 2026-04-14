@@ -49,6 +49,7 @@ public class PehatCOD extends Configs {
     private String ampulaPM2;
     private String ampulaR2;
 
+    @FXML private TextField famGeo;
     @FXML private ImageView instr;
     @FXML private TextField cehen;
     @FXML private TextField bdname;
@@ -120,7 +121,7 @@ public class PehatCOD extends Configs {
         idi.setVisible(false);
         bdname.setVisible(false);
         ush.setVisible(false);
-
+        famGeo.setVisible(false);
         singUpButtun1.setOnMouseClicked(mouseEvent -> {
             String selectedGor = gorbox.getValue();
             String selectedName = namebox.getValue();
@@ -231,6 +232,8 @@ public class PehatCOD extends Configs {
                 primhanie.setText(data.getPRIM());
                 idi.setText(data.getIDI());
                 ush.setText(data.getUHASTOK());
+                famGeo.setText(data.getSLOI());
+
                 setupImageHandlers();
                 // Обновляем изображения
                 Choice.setText(data.getUGOL());
@@ -328,7 +331,7 @@ public class PehatCOD extends Configs {
         this.ampulaPM2 = "";this.ampulaR2 = "";
         katigoria1.clear();opisanie1.setText("");
         setupImageHandlers();
-
+        famGeo.setText("");
         Choice.setText("");
         clearTable(dataTable);
 
@@ -549,7 +552,7 @@ public class PehatCOD extends Configs {
         tableData.put("${kategorii}", katigoria.getText());
         tableData.put("${opisanie}", opisanie.getText());
         tableData.put("${interval}","0 ÷ "+ dlina.getText());
-
+        tableData.put( "${FamGeo}", famGeo.getText());
 
         tableData.put("${konstrk}", getIlement(idi.getText()));
         tableData.put("${obvid}",   getRESURS(HABLON_PATH_VID,  nomer1.getText() + ".jpg"));
@@ -648,6 +651,7 @@ public class PehatCOD extends Configs {
         tableData.put("${privazka}", privazka.getText());
         tableData.put("${dlina}", dlina.getText());
         tableData.put("${dnomer}", dop.getText());
+        tableData.put( "${FamGeo}", famGeo.getText());
 
         tableData.put("${kategorii}", katigoria1.getText());
         tableData.put("${opisanie}", opisanie1.getText());
@@ -854,7 +858,7 @@ public class PehatCOD extends Configs {
             // Данные таблицы1
             tableData_1.add(Arrays.asList("1", "Проветривание","Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y"));
 
-            tableData_1.add(Arrays.asList("2", "Приведение выработки в безопасное состояние", "Y", "N", "N", "N", "N", "N", "O", "N", "N", "N", "N", "N","Y", "N", "N", "N", "N", "N", "O", "N", "N", "N", "N", "N"));
+            tableData_1.add(Arrays.asList("2", "Приведение выработки в безопасное состояние, оборка заколов", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y"));
             tableData_1.add(Arrays.asList("3", "Подготовка оборудования", "N", "Y", "N", "N", "N", "N", "O", "N", "N", "N", "N", "N","N", "Y", "N", "N", "N", "N", "O", "N", "N", "N", "N", "N"));
             tableData_1.add(Arrays.asList("4", "Обустройство рабочего места", "N", "N", "Y", "Y", "N", "N", "O", "N", "N", "N", "N", "N","N", "N", "Y", "Y", "N", "N", "O", "N", "N", "N", "N", "N"));
             tableData_1.add(Arrays.asList("5", "Доставка крепежных материалов","N", "N", "N", "N", "Y", "N", "O", "N", "N", "N", "N", "N","N", "N", "N", "N", "Y", "N", "O", "N", "N", "N", "N", "N"));
@@ -868,7 +872,7 @@ public class PehatCOD extends Configs {
             // Данные таблицы1
             tableData_1.add(Arrays.asList("1", "Проветривание", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y"));
 
-            tableData_1.add(Arrays.asList("2", "Приведение выработки в безопасное состояние", "Y", "N", "N", "N", "N", "N", "O", "N", "N", "N", "N", "N","Y", "N", "N", "N", "N", "N", "O", "N", "N", "N","N","N"));
+            tableData_1.add(Arrays.asList("2", "Приведение выработки в безопасное состояние, оборка заколов", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y"));
             tableData_1.add(Arrays.asList("3", "Подготовка оборудования","N", "Y", "N", "N", "N", "N", "O", "N", "N", "N", "N", "N","N", "Y", "N", "N", "N", "N", "O", "N", "N", "N", "N", "N"));
             tableData_1.add(Arrays.asList("4", "Уборка горной массы", "N", "N", "Y", "Y", "N", "N", "O", "N", "N", "N", "N", "N","N", "N", "Y", "Y", "N", "N", "O", "N", "N", "N", "N", "N"));
             tableData_1.add(Arrays.asList("5", "Доставка крепежных материалов","N", "N", "N", "N", "Y", "N", "O", "N", "N", "N", "N", "N","N", "N", "N", "N", "Y", "N", "O", "N", "N", "N", "N", "N"));
@@ -905,7 +909,7 @@ public class PehatCOD extends Configs {
                                 switch (placeholder) {
                                     case "${plan}": case "${poper}": W_IMG = 470;H_IMG = 330;Reso = false;
                                         break;
-                                    case "${sxema}": W_IMG = 700;H_IMG = 400;Reso = false;
+                                    case "${sxema}": W_IMG = 460;H_IMG = 620;Reso = false;
                                         break;
                                     case "${sxematexfakt}", "${sxematexfakt2}": W_IMG = 460;H_IMG = 600;Reso = true;
                                         break;
@@ -955,7 +959,7 @@ public class PehatCOD extends Configs {
                     run.addBreak(); // перенос строки
                 }
             }
-        } else if (List.of("${ush}", "${kategorii}", "${opisanie}", "${interval}").contains(placeholder)) {
+        } else if (List.of("${ush}", "${FamGeo}","${kategorii}", "${opisanie}", "${interval}").contains(placeholder)) {
             XWPFRun run = p.createRun();
             run.setText(text.replace(placeholder, replacement));
             run.setFontFamily("Times New Roman");

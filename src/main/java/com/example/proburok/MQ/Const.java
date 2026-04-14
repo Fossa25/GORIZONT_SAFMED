@@ -13,6 +13,7 @@ public class Const {
     public static final String BAZA_TIPPAS="№ПАСПОРТА_КРЕПЛЕНИЯ";
     public static final String BAZA_PRIVIZKA="ПРИВЯЗКА";
     public static final String BAZA_UGOL="УГОЛ";
+    public static final String BAZA_FIO="СЛОИСТОСТЬ";
     public static final String BAZA_DLINA="ДЛИНА_ВЫРАБОТКИ";
     public static final String BAZA_UHASTOK="УЧАСТОК";
     public static final String BAZA_PRIM="ПРИМИЧАНИЕ";
