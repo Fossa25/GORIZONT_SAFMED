@@ -9,6 +9,7 @@ bash
 git checkout master
 
 # Забрать последние изменения с GitHub
+
 git pull origin master
 2. Создание ветки для новой задачи
 bash

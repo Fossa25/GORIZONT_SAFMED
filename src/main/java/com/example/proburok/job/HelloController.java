@@ -27,10 +27,10 @@ public class HelloController {
     @FXML private ImageView tablis;
     @FXML
     void initialize() {
-        loginSingUpButton.setVisible(false);
-        loginSingUpButton1.setVisible(false);
-        loginSingUpButton2.setVisible(false);
-        loginSingUpButton3.setVisible(false);
+        loginSingUpButton.setVisible(true);
+        loginSingUpButton1.setVisible(true);
+        loginSingUpButton2.setVisible(true);
+        loginSingUpButton3.setVisible(true);
         authSiginButton.setOnAction(actionEvent -> {
             String loginText = login_fild.getText().trim();
             String loginPassword = password_fild.getText().trim();
